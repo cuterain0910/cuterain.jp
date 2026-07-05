@@ -1,380 +1,287 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cuterain｜電車×かわいい、女性向け鉄道ブランド</title>
-  <style>
-    /* ===== 全体 ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Hiragino Maru Gothic Pro', 'BIZ UDPGothic', sans-serif;
-      background-color: #fff8fb;
-      color: #3d2b1f;
-    }
-
-    /* ===== ヘッダー ===== */
-    header {
-      background-color: #fff;
-      padding: 16px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    header img.logo {
-      height: 60px;
-    }
-    nav a {
-      margin-left: 24px;
-      text-decoration: none;
-      color: #3d2b1f;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    nav a:hover { color: #e87da0; }
-
-    /* ===== ヒーローセクション ===== */
-    .hero {
-      background: linear-gradient(135deg, #ffe4ef 0%, #e8f4ff 100%);
-      text-align: center;
-      padding: 80px 20px;
-    }
-    .hero h1 {
-      font-size: 2.2rem;
-      color: #c0457a;
-      margin-bottom: 16px;
-      line-height: 1.4;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: #5a3e35;
-      margin-bottom: 32px;
-      line-height: 1.8;
-    }
-    .hero .btn {
-      background-color: #e87da0;
-      color: #fff;
-      padding: 14px 36px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .hero .btn:hover { background-color: #c0457a; }
-
-    /* ===== セクション共通 ===== */
-    section {
-      padding: 64px 20px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    section h2 {
-      font-size: 1.8rem;
-      color: #c0457a;
-      text-align: center;
-      margin-bottom: 40px;
-      position: relative;
-    }
-    section h2::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: #e87da0;
-      border-radius: 2px;
-      margin: 10px auto 0;
-    }
-
-    /* ===== コンセプトセクション ===== */
-    .concept-text {
-      font-size: 1rem;
-      line-height: 2;
-      text-align: center;
-      color: #5a3e35;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* ===== 商品セクション ===== */
-    .products {
-      background-color: #fff0f6;
-      padding: 64px 20px;
-    }
-    .products-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .products-inner h2 {
-      font-size: 1.8rem;
-      color: #c0457a;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .products-inner h2::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: #e87da0;
-      border-radius: 2px;
-      margin: 10px auto 0;
-    }
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 24px;
-    }
-    .product-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(232,125,160,0.15);
-      transition: transform 0.3s;
-    }
-    .product-card:hover { transform: translateY(-6px); }
-    .product-card img {
-      width: 100%;
-      max-width: 160px;
-      border-radius: 8px;
-      margin-bottom: 12px;
-    }
-    .product-card h3 {
-      font-size: 1rem;
-      color: #c0457a;
-      margin-bottom: 6px;
-    }
-    .product-card p {
-      font-size: 0.9rem;
-      color: #5a3e35;
-    }
-    .product-info {
-      margin-top: 32px;
-      background: #fff;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 4px 12px rgba(232,125,160,0.1);
-    }
-    .product-info table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    }
-    .product-info td {
-      padding: 10px 16px;
-      border-bottom: 1px solid #f5d0e0;
-    }
-    .product-info td:first-child {
-      font-weight: bold;
-      color: #c0457a;
-      width: 140px;
-    }
-
-    /* ===== ストーリーセクション ===== */
-    .story-text {
-      font-size: 1rem;
-      line-height: 2;
-      color: #5a3e35;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* ===== 会社概要 ===== */
-    .company {
-      background-color: #fff0f6;
-      padding: 64px 20px;
-    }
-    .company-inner {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .company-inner h2 {
-      font-size: 1.8rem;
-      color: #c0457a;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .company-inner h2::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: #e87da0;
-      border-radius: 2px;
-      margin: 10px auto 0;
-    }
-    .company-inner table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    }
-    .company-inner td {
-      padding: 12px 16px;
-      border-bottom: 1px solid #f5d0e0;
-    }
-    .company-inner td:first-child {
-      font-weight: bold;
-      color: #c0457a;
-      width: 140px;
-    }
-
-    /* ===== お問い合わせ ===== */
-    .contact {
-      text-align: center;
-      padding: 64px 20px;
-    }
-    .contact p {
-      font-size: 1rem;
-      color: #5a3e35;
-      margin-bottom: 16px;
-    }
-    .contact a {
-      color: #e87da0;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* ===== フッター ===== */
-    footer {
-      background-color: #3d2b1f;
-      color: #fff;
-      text-align: center;
-      padding: 24px;
-      font-size: 0.85rem;
-    }
-
-    /* ===== レスポンシブ ===== */
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 1.5rem; }
-      nav a { margin-left: 12px; font-size: 12px; }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuterain | かわいいが、電車旅のきっかけになる。</title>
+  <meta name="description" content="Cuterainは、かわいいをきっかけに、駅や街との新しい出会いを届けるブランドです。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@200;300;400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ヘッダー -->
-  <header>
-    <img src="images/logo.png" alt="Cuterain ロゴ" class="logo">
-    <nav>
-      <a href="#concept">コンセプト</a>
-      <a href="#products">商品</a>
-      <a href="#story">ストーリー</a>
-      <a href="#company">会社概要</a>
-      <a href="#contact">お問い合わせ</a>
-    </nav>
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#" class="header__logo">
+        <img src="images/logo.png" alt="Cuterain" class="header__logo-img" />
+        <span class="header__logo-text">Cuterain</span>
+      </a>
+      <nav class="header__nav" id="headerNav">
+        <ul class="header__nav-list">
+          <li><a href="#about" class="header__nav-link">About</a></li>
+          <li><a href="#products" class="header__nav-link">Products</a></li>
+          <li><a href="#story" class="header__nav-link">Story</a></li>
+          <li><a href="#news" class="header__nav-link">News</a></li>
+          <li><a href="#instagram" class="header__nav-link">Instagram</a></li>
+        </ul>
+      </nav>
+      <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </header>
 
-  <!-- ヒーローセクション -->
-  <div class="hero">
-    <h1>🚃 電車×かわいい<br>新しい鉄道文化を、女の子と。</h1>
-    <p>
-      「かわいいから気になる」「この電車に乗ってみたい」<br>
-      Cuterainは、そんな気持ちを大切にする女性向け鉄道ブランドです。
-    </p>
-    <a href="#products" class="btn">🎫 商品を見る</a>
-  </div>
-
-  <!-- コンセプト -->
-  <section id="concept">
-    <h2>🌸 コンセプト</h2>
-    <p class="concept-text">
-      「Cuterain（キュートレイン）」は、<strong>Cute（かわいい）</strong>と<strong>Train（電車）</strong>を掛け合わせた造語です。<br><br>
-      「鉄道は男性向け」という常識に挑み、女性が「バッグにつけたい」「毎日持ち歩きたい」と思える鉄道グッズを企画・販売します。<br><br>
-      「かわいい」をきっかけに、電車を好きになる女の子を増やしたい。<br>
-      その想いから、現役女子大生の代表・門脇真歩が2026年7月に起業しました。
-    </p>
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-blur"></div>
+    <div class="hero__inner">
+      <div class="hero__content">
+        <p class="hero__label fade-in-up">— 電車 × かわいい</p>
+        <h1 class="hero__copy fade-in-up delay-1">
+          「かわいい」が、<br />電車旅の<br />きっかけになる。
+        </h1>
+        <p class="hero__sub fade-in-up delay-2">
+          電車×かわいいをテーマに、<br />
+          電車旅を楽しむ女の子を増やすブランド。
+        </p>
+        <div class="hero__cta fade-in-up delay-3">
+          <a href="#about" class="btn btn--primary">ブランドを見る</a>
+          <a href="#products" class="btn btn--outline">商品を見る</a>
+        </div>
+      </div>
+      <div class="hero__image fade-in-right delay-2">
+        <div class="hero__image-wrap">
+          <img src="images/product-all.png" alt="Cuterain Products" class="hero__img" />
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-text">Scroll</span>
+    </div>
   </section>
 
-  <!-- 商品セクション -->
-  <div class="products" id="products">
-    <div class="products-inner">
-      <h2>🎫 商品紹介</h2>
-      <p style="text-align:center; margin-bottom:32px; color:#5a3e35;">
-        第一弾商品「ご当地切符キーホルダー <strong>思い出きっぷ</strong>」
-      </p>
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="about__inner">
+      <div class="about__label reveal">ABOUT</div>
+      <h2 class="about__heading reveal delay-1">
+        「かわいい」が、<br />新しい旅への<br />入り口になる。
+      </h2>
+      <div class="about__body reveal delay-2">
+        <p>
+          Cuterainは、<br />
+          かわいいをきっかけに、<br />
+          駅や街との新しい出会いを届けるブランドです。
+        </p>
+        <p>
+          商品ではなく、体験を。<br />
+          電車旅を、もっと好きになる。
+        </p>
+      </div>
+      <div class="about__line reveal delay-3"></div>
+    </div>
+  </section>
 
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="images/kobe.jpg" alt="新神戸駅">
-          <h3>新神戸駅</h3>
-          <p>また帰っとおで！🌊</p>
+  <!-- ========== PRODUCTS ========== -->
+  <section class="products" id="products">
+    <div class="products__inner">
+      <div class="products__label reveal">PRODUCTS</div>
+
+      <!-- メイン商品 -->
+      <div class="products__main">
+        <div class="products__main-image reveal">
+          <img src="images/product-all.png" alt="思い出きっぷ" class="products__main-img" />
         </div>
-        <div class="product-card">
-          <img src="images/kyoto.jpg" alt="京都駅">
-          <h3>京都駅</h3>
-          <p>またおこしやす🌸</p>
-        </div>
-        <div class="product-card">
-          <img src="images/nara.jpg" alt="奈良駅">
-          <h3>奈良駅</h3>
-          <p>また来てくれはる？🦌</p>
-        </div>
-        <div class="product-card">
-          <img src="images/osaka.jpg" alt="新大阪駅">
-          <h3>新大阪駅</h3>
-          <p>おおきに！また来てや〜🐙</p>
+        <div class="products__main-info reveal delay-2">
+          <p class="products__main-label">First Collection</p>
+          <h2 class="products__main-title">思い出きっぷ</h2>
+          <p class="products__main-desc">
+            旅の記憶を、かわいいきっぷに。<br />
+            電車旅のはじまりを、もっと特別な瞬間に変える。<br />
+            あなただけの「思い出」を、一枚に。
+          </p>
+          <a href="#" class="btn btn--primary">詳しく見る</a>
         </div>
       </div>
 
-      <div class="product-info">
-        <table>
-          <tr><td>商品名</td><td>思い出きっぷ（アクリルキーホルダー）</td></tr>
-          <tr><td>ラインナップ</td><td>新大阪駅・京都駅・新神戸駅・奈良駅</td></tr>
-          <tr><td>価格</td><td>550円（税込）</td></tr>
-          <tr><td>発売日</td><td>2026年7月10日（金）</td></tr>
-          <tr><td>販売場所</td><td>駅鉄ポップショップ エキマルシェ新大阪店<br>（JR新大阪駅3F 在来線改札内）</td></tr>
-        </table>
+      <!-- 地域カード -->
+      <div class="products__cards">
+        <div class="products__card reveal" style="--delay: 0s">
+          <div class="products__card-img-wrap">
+            <img src="images/kyoto.png" alt="京都" class="products__card-img" />
+          </div>
+          <div class="products__card-body">
+            <p class="products__card-label">KYOTO</p>
+            <h3 class="products__card-title">京都</h3>
+          </div>
+        </div>
+        <div class="products__card reveal" style="--delay: 0.1s">
+          <div class="products__card-img-wrap">
+            <img src="images/nara.png" alt="奈良" class="products__card-img" />
+          </div>
+          <div class="products__card-body">
+            <p class="products__card-label">NARA</p>
+            <h3 class="products__card-title">奈良</h3>
+          </div>
+        </div>
+        <div class="products__card reveal" style="--delay: 0.2s">
+          <div class="products__card-img-wrap">
+            <img src="images/shinkobe.png" alt="神戸" class="products__card-img" />
+          </div>
+          <div class="products__card-body">
+            <p class="products__card-label">SHIN-KOBE</p>
+            <h3 class="products__card-title">神戸</h3>
+          </div>
+        </div>
+        <div class="products__card reveal" style="--delay: 0.3s">
+          <div class="products__card-img-wrap">
+            <img src="images/shinosaka.png" alt="大阪" class="products__card-img" />
+          </div>
+          <div class="products__card-body">
+            <p class="products__card-label">SHIN-OSAKA</p>
+            <h3 class="products__card-title">大阪</h3>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- ストーリー -->
-  <section id="story">
-    <h2>💌 創業ストーリー</h2>
-    <p class="story-text">
-      幼いころから電車が好きでした。<br>
-      車窓から見える景色。初めて降り立つ駅。その街で出会う人や風景。<br>
-      電車は、ただの移動手段ではなく、新しい世界へ連れて行ってくれる特別な存在でした。<br><br>
-      しかし成長するにつれ、ある違和感を抱くようになります。<br>
-      女性が「バッグにつけたい」「毎日持ち歩きたい」と思える鉄道グッズは、まだ多くありません。<br><br>
-      SNSでは「#女子鉄」「#鉄子旅」の投稿が増え続けているのに、それに応えるブランドが足りない。<br><br>
-      その空白地帯を埋めたい。<br>
-      <strong>「かわいい」をきっかけに、電車を好きになる女の子を増やしたい。</strong><br><br>
-      その想いから、大阪公立大学在学中の門脇真歩が株式会社Cuterainを設立しました。
-    </p>
   </section>
 
-  <!-- 会社概要 -->
-  <div class="company" id="company">
-    <div class="company-inner">
-      <h2>🏢 会社概要</h2>
-      <table>
-        <tr><td>社名</td><td>株式会社Cuterain</td></tr>
-        <tr><td>設立</td><td>2026年7月1日</td></tr>
-        <tr><td>代表取締役</td><td>門脇 真歩</td></tr>
-        <tr><td>事業内容</td><td>女性向け鉄道グッズ企画・販売<br>イベント企画・情報発信</td></tr>
-        <tr><td>HP</td><td><a href="https://cuterain.jp">https://cuterain.jp</a></td></tr>
-        <tr><td>E-mail</td><td>info@cuterain.jp</td></tr>
-      </table>
+  <!-- ========== BRAND STORY ========== -->
+  <section class="story" id="story">
+    <div class="story__inner">
+      <div class="story__label reveal">BRAND STORY</div>
+      <div class="story__typo">
+        <span class="story__word reveal" data-speed="0.3">「かわいい」</span>
+        <span class="story__connector reveal delay-1">が</span>
+        <span class="story__word story__word--accent reveal delay-2">電車旅</span>
+        <span class="story__connector reveal delay-3">になる。</span>
+      </div>
+      <div class="story__text reveal delay-2">
+        <p>
+          電車に乗ることが、旅になる。<br />
+          かわいいものが、きっかけになる。<br />
+          Cuterainは、その橋渡しをするブランドです。
+        </p>
+      </div>
     </div>
-  </div>
-
-  <!-- お問い合わせ -->
-  <section id="contact" class="contact">
-    <h2>📩 お問い合わせ</h2>
-    <p>ご質問・取材・コラボのご相談など、お気軽にご連絡ください。</p>
-    <p>✉️ <a href="mailto:info@cuterain.jp">info@cuterain.jp</a></p>
   </section>
 
-  <!-- フッター -->
-  <footer>
-    <p>🚃 © 2026 株式会社Cuterain All Rights Reserved.</p>
+  <!-- ========== NEWS ========== -->
+  <section class="news" id="news">
+    <div class="news__inner">
+      <div class="news__label reveal">NEWS</div>
+      <ul class="news__list">
+        <li class="news__item reveal">
+          <a href="#" class="news__link">
+            <time class="news__date">2026.07.01</time>
+            <span class="news__cat">Brand</span>
+            <span class="news__title">ブランド設立</span>
+            <span class="news__arrow">→</span>
+          </a>
+        </li>
+        <li class="news__item reveal delay-1">
+          <a href="#" class="news__link">
+            <time class="news__date">2026.07.10</time>
+            <span class="news__cat">Product</span>
+            <span class="news__title">思い出きっぷ 販売開始</span>
+            <span class="news__arrow">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== INSTAGRAM ========== -->
+  <section class="instagram" id="instagram">
+    <div class="instagram__inner">
+      <div class="instagram__label reveal">INSTAGRAM</div>
+      <h2 class="instagram__heading reveal delay-1">@cuterain_jp</h2>
+      <div class="instagram__grid reveal delay-2">
+        <!-- Instagram埋め込み風プレースホルダー -->
+        <div class="instagram__item">
+          <img src="images/kyoto.png" alt="Instagram post" />
+          <div class="instagram__overlay">
+            <span>♡</span>
+          </div>
+        </div>
+        <div class="instagram__item">
+          <img src="images/nara.png" alt="Instagram post" />
+          <div class="instagram__overlay">
+            <span>♡</span>
+          </div>
+        </div>
+        <div class="instagram__item">
+          <img src="images/shinkobe.png" alt="Instagram post" />
+          <div class="instagram__overlay">
+            <span>♡</span>
+          </div>
+        </div>
+        <div class="instagram__item">
+          <img src="images/shinosaka.png" alt="Instagram post" />
+          <div class="instagram__overlay">
+            <span>♡</span>
+          </div>
+        </div>
+        <div class="instagram__item">
+          <img src="images/product-all.png" alt="Instagram post" />
+          <div class="instagram__overlay">
+            <span>♡</span>
+          </div>
+        </div>
+        <div class="instagram__item">
+          <img src="images/kyoto.png" alt="Instagram post" />
+          <div class="instagram__overlay">
+            <span>♡</span>
+          </div>
+        </div>
+      </div>
+      <div class="instagram__btn-wrap reveal delay-3">
+        <a href="https://www.instagram.com/cuterain_jp/" target="_blank" rel="noopener" class="btn btn--outline">
+          Instagramを見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__logo">
+          <img src="images/logo.png" alt="Cuterain" class="footer__logo-img" />
+          <span class="footer__logo-text">Cuterain</span>
+        </div>
+        <nav class="footer__nav">
+          <ul class="footer__nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+          </ul>
+        </nav>
+        <div class="footer__sns">
+          <a href="https://www.instagram.com/cuterain_jp/" target="_blank" rel="noopener" class="footer__sns-link" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Cuterain. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
