@@ -1079,3 +1079,36 @@ ul {
     font-size: 2rem;
   }
 }
+/* ===== Instagram セクション ===== */
+.instagram-section {
+  padding: 100px 40px;
+  background-color: var(--color-bg-sub);
+  text-align: center;
+}
+
+.instagram-text {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  margin: 24px 0 48px;
+  letter-spacing: 0.1em;
+  line-height: 2;
+}
+
+/* フォローボタン */
+.btn-instagram {
+  display: inline-block;
+  padding: 16px 56px;
+  font-family: var(--font-serif-en);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--color-text);
+  border: 1.5px solid var(--color-accent);
+  border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-instagram:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+}
