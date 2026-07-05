@@ -192,9 +192,10 @@ ul {
 }
 
 .header__inner {
-  display: flex;              /* ← 横並びにする */
+  display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between;  /* ← ロゴ左・ナビ右 */
+  flex-direction: row;             /* ← 必ず横並び！ */
   padding: 16px 48px;
   max-width: 1200px;
   margin: 0 auto;
@@ -207,7 +208,7 @@ ul {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  flex-shrink: 0;             /* ← 縮まないように */
+  flex-shrink: 0;
 }
 
 .header__logo-img {
@@ -224,8 +225,14 @@ ul {
 }
 
 /* ナビゲーション */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
 .nav-menu ul {
-  display: flex;              /* ← 横並び */
+  display: flex;
+  flex-direction: row;             /* ← 横並び */
   align-items: center;
   gap: 28px;
   list-style: none;
@@ -247,15 +254,16 @@ ul {
   color: #c4788a;
 }
 
-/* ハンバーガーボタン（スマホ用） */
+/* ハンバーガーボタン（PCでは非表示） */
 .header__menu-btn {
-  display: none;              /* PCでは非表示 */
+  display: none;
   flex-direction: column;
   gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 4px;
+  z-index: 1001;
 }
 
 .header__menu-btn span {
@@ -273,9 +281,9 @@ ul {
 @media (max-width: 768px) {
   .header__inner {
     padding: 14px 20px;
+    flex-direction: row;           /* ← スマホも横並びを維持 */
   }
 
-  /* ナビを非表示にしてハンバーガーで制御 */
   .nav-menu {
     display: none;
     position: fixed;
@@ -295,7 +303,7 @@ ul {
   }
 
   .nav-menu ul {
-    flex-direction: column;   /* ← スマホは縦並び */
+    flex-direction: column;        /* スマホメニューは縦 */
     gap: 32px;
     text-align: center;
   }
@@ -305,10 +313,8 @@ ul {
     letter-spacing: 0.3em;
   }
 
-  /* ハンバーガー表示 */
   .header__menu-btn {
     display: flex;
-    z-index: 1001;
   }
 }
 
