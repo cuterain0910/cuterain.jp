@@ -176,93 +176,80 @@ ul {
   text-transform: uppercase;
 }
 
-/* ============================================================
+/* ===========================
    HEADER
-   ============================================================ */
+=========================== */
 .header {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   z-index: 1000;
-  padding: 1.5rem 0;
-  transition: background 0.5s ease, padding 0.4s ease, backdrop-filter 0.5s ease;
-}
-
-.header.is-scrolled {
-  background: rgba(250, 248, 245, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(196, 120, 138, 0.08);
+  transition: background 0.3s;
 }
 
 .header__inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 3rem;
-  display: flex;
+  display: flex;              /* ← 横並びにする */
   align-items: center;
   justify-content: space-between;
+  padding: 16px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* Logo */
+/* ロゴ */
 .header__logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;             /* ← 縮まないように */
 }
 
 .header__logo-img {
-  height: 32px;
+  height: 36px;
   width: auto;
 }
 
 .header__logo-text {
   font-family: var(--font-serif-en);
-  font-size: 1.3rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  color: var(--color-brown-dark);
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+  color: #c4788a;
+  white-space: nowrap;
 }
 
-/* Nav */
-.header__nav-list {
-  display: flex;
-  gap: 2.5rem;
+/* ナビゲーション */
+.nav-menu ul {
+  display: flex;              /* ← 横並び */
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.header__nav-link {
-  font-family: var(--font-serif-en);
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  color: var(--color-text-sub);
-  position: relative;
-  transition: color var(--transition-base);
+.nav-menu ul li a {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: #5a3a42;
+  text-decoration: none;
+  transition: color 0.3s;
+  white-space: nowrap;
 }
 
-.header__nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-brown);
-  transition: width var(--transition-base);
+.nav-menu ul li a:hover {
+  color: #c4788a;
 }
 
-.header__nav-link:hover {
-  color: var(--color-brown-dark);
-}
-
-.header__nav-link:hover::after {
-  width: 100%;
-}
-
-/* Hamburger */
+/* ハンバーガーボタン（スマホ用） */
 .header__menu-btn {
-  display: none;
+  display: none;              /* PCでは非表示 */
   flex-direction: column;
   gap: 5px;
   background: none;
@@ -274,19 +261,55 @@ ul {
 .header__menu-btn span {
   display: block;
   width: 24px;
-  height: 1px;
-  background: var(--color-brown-dark);
-  transition: var(--transition-base);
+  height: 2px;
+  background: #5a3a42;
+  border-radius: 2px;
+  transition: all 0.3s;
 }
 
-.header__menu-btn.is-open span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-.header__menu-btn.is-open span:nth-child(2) {
-  opacity: 0;
-}
-.header__menu-btn.is-open span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
+/* ===========================
+   スマホ対応（768px以下）
+=========================== */
+@media (max-width: 768px) {
+  .header__inner {
+    padding: 14px 20px;
+  }
+
+  /* ナビを非表示にしてハンバーガーで制御 */
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(247, 221, 227, 0.97);
+    z-index: 999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;   /* ← スマホは縦並び */
+    gap: 32px;
+    text-align: center;
+  }
+
+  .nav-menu ul li a {
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
+  }
+
+  /* ハンバーガー表示 */
+  .header__menu-btn {
+    display: flex;
+    z-index: 1001;
+  }
 }
 
 /* ============================================================
