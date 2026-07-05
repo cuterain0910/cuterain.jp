@@ -5,8 +5,8 @@
 
 /* ---------- CSS Variables ---------- */
 :root {
-  --color-bg: #faf8f5;
-  --color-bg-alt: #f5f0eb;
+  --color-bg: #F7DDE3;
+  --color-bg-alt: #F0CDD5;
   --color-white: #ffffff;
   --color-beige: #e8ddd4;
   --color-pink: #e8c9c0;
@@ -20,7 +20,7 @@
 
   --font-serif-en: 'Cormorant Garamond', serif;
   --font-serif-jp: 'Noto Serif JP', serif;
-  --font-sans: 'Noto Sans JP', sans-serif;
+  --font-sans: 'Zen Maru Gothic', sans-serif;
 
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
