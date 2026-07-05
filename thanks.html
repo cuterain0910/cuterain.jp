@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>送信完了 | Cuterain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #F7DDE3;
+      --color-text: #3D2B1F;
+      --color-text-sub: #7A6055;
+      --color-accent: #C4956A;
+      --font-serif-en: 'Cormorant Garamond', serif;
+      --font-sans: 'Zen Maru Gothic', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .thanks-box {
+      text-align: center;
+      padding: 80px 40px;
+    }
+    .thanks-icon {
+      font-size: 4rem;
+      margin-bottom: 24px;
+    }
+    .thanks-title {
+      font-family: var(--font-serif-en);
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      margin-bottom: 24px;
+    }
+    .thanks-text {
+      font-size: 0.95rem;
+      color: var(--color-text-sub);
+      line-height: 2.2;
+      margin-bottom: 48px;
+    }
+    .thanks-btn {
+      display: inline-block;
+      padding: 14px 48px;
+      font-family: var(--font-serif-en);
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      color: var(--color-text);
+      border: 1.5px solid var(--color-accent);
+      border-radius: 40px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .thanks-btn:hover {
+      background-color: var(--color-accent);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="thanks-box">
+    <div class="thanks-icon">✉️</div>
+    <h1 class="thanks-title">Thank You</h1>
+    <p class="thanks-text">
+      お問い合わせありがとうございます。<br>
+      内容を確認の上、3営業日以内にご返信いたします。
+    </p>
+    <a href="index.html" class="thanks-btn">Back to Home</a>
+  </div>
+</body>
+</html>
