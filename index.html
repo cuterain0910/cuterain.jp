@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuterain｜電車×かわいい、女性向け鉄道ブランド</title>
+  <style>
+    /* ===== 全体 ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Hiragino Maru Gothic Pro', 'BIZ UDPGothic', sans-serif;
+      background-color: #fff8fb;
+      color: #3d2b1f;
+    }
+
+    /* ===== ヘッダー ===== */
+    header {
+      background-color: #fff;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header img.logo {
+      height: 60px;
+    }
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #3d2b1f;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    nav a:hover { color: #e87da0; }
+
+    /* ===== ヒーローセクション ===== */
+    .hero {
+      background: linear-gradient(135deg, #ffe4ef 0%, #e8f4ff 100%);
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      color: #c0457a;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #5a3e35;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .hero .btn {
+      background-color: #e87da0;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .hero .btn:hover { background-color: #c0457a; }
+
+    /* ===== セクション共通 ===== */
+    section {
+      padding: 64px 20px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      color: #c0457a;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #e87da0;
+      border-radius: 2px;
+      margin: 10px auto 0;
+    }
+
+    /* ===== コンセプトセクション ===== */
+    .concept-text {
+      font-size: 1rem;
+      line-height: 2;
+      text-align: center;
+      color: #5a3e35;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ===== 商品セクション ===== */
+    .products {
+      background-color: #fff0f6;
+      padding: 64px 20px;
+    }
+    .products-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .products-inner h2 {
+      font-size: 1.8rem;
+      color: #c0457a;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .products-inner h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #e87da0;
+      border-radius: 2px;
+      margin: 10px auto 0;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(232,125,160,0.15);
+      transition: transform 0.3s;
+    }
+    .product-card:hover { transform: translateY(-6px); }
+    .product-card img {
+      width: 100%;
+      max-width: 160px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .product-card h3 {
+      font-size: 1rem;
+      color: #c0457a;
+      margin-bottom: 6px;
+    }
+    .product-card p {
+      font-size: 0.9rem;
+      color: #5a3e35;
+    }
+    .product-info {
+      margin-top: 32px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(232,125,160,0.1);
+    }
+    .product-info table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .product-info td {
+      padding: 10px 16px;
+      border-bottom: 1px solid #f5d0e0;
+    }
+    .product-info td:first-child {
+      font-weight: bold;
+      color: #c0457a;
+      width: 140px;
+    }
+
+    /* ===== ストーリーセクション ===== */
+    .story-text {
+      font-size: 1rem;
+      line-height: 2;
+      color: #5a3e35;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ===== 会社概要 ===== */
+    .company {
+      background-color: #fff0f6;
+      padding: 64px 20px;
+    }
+    .company-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .company-inner h2 {
+      font-size: 1.8rem;
+      color: #c0457a;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .company-inner h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #e87da0;
+      border-radius: 2px;
+      margin: 10px auto 0;
+    }
+    .company-inner table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .company-inner td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #f5d0e0;
+    }
+    .company-inner td:first-child {
+      font-weight: bold;
+      color: #c0457a;
+      width: 140px;
+    }
+
+    /* ===== お問い合わせ ===== */
+    .contact {
+      text-align: center;
+      padding: 64px 20px;
+    }
+    .contact p {
+      font-size: 1rem;
+      color: #5a3e35;
+      margin-bottom: 16px;
+    }
+    .contact a {
+      color: #e87da0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ===== フッター ===== */
+    footer {
+      background-color: #3d2b1f;
+      color: #fff;
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+    }
+
+    /* ===== レスポンシブ ===== */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.5rem; }
+      nav a { margin-left: 12px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <img src="images/logo.png" alt="Cuterain ロゴ" class="logo">
+    <nav>
+      <a href="#concept">コンセプト</a>
+      <a href="#products">商品</a>
+      <a href="#story">ストーリー</a>
+      <a href="#company">会社概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <!-- ヒーローセクション -->
+  <div class="hero">
+    <h1>🚃 電車×かわいい<br>新しい鉄道文化を、女の子と。</h1>
+    <p>
+      「かわいいから気になる」「この電車に乗ってみたい」<br>
+      Cuterainは、そんな気持ちを大切にする女性向け鉄道ブランドです。
+    </p>
+    <a href="#products" class="btn">🎫 商品を見る</a>
+  </div>
+
+  <!-- コンセプト -->
+  <section id="concept">
+    <h2>🌸 コンセプト</h2>
+    <p class="concept-text">
+      「Cuterain（キュートレイン）」は、<strong>Cute（かわいい）</strong>と<strong>Train（電車）</strong>を掛け合わせた造語です。<br><br>
+      「鉄道は男性向け」という常識に挑み、女性が「バッグにつけたい」「毎日持ち歩きたい」と思える鉄道グッズを企画・販売します。<br><br>
+      「かわいい」をきっかけに、電車を好きになる女の子を増やしたい。<br>
+      その想いから、現役女子大生の代表・門脇真歩が2026年7月に起業しました。
+    </p>
+  </section>
+
+  <!-- 商品セクション -->
+  <div class="products" id="products">
+    <div class="products-inner">
+      <h2>🎫 商品紹介</h2>
+      <p style="text-align:center; margin-bottom:32px; color:#5a3e35;">
+        第一弾商品「ご当地切符キーホルダー <strong>思い出きっぷ</strong>」
+      </p>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/kobe.jpg" alt="新神戸駅">
+          <h3>新神戸駅</h3>
+          <p>また帰っとおで！🌊</p>
+        </div>
+        <div class="product-card">
+          <img src="images/kyoto.jpg" alt="京都駅">
+          <h3>京都駅</h3>
+          <p>またおこしやす🌸</p>
+        </div>
+        <div class="product-card">
+          <img src="images/nara.jpg" alt="奈良駅">
+          <h3>奈良駅</h3>
+          <p>また来てくれはる？🦌</p>
+        </div>
+        <div class="product-card">
+          <img src="images/osaka.jpg" alt="新大阪駅">
+          <h3>新大阪駅</h3>
+          <p>おおきに！また来てや〜🐙</p>
+        </div>
+      </div>
+
+      <div class="product-info">
+        <table>
+          <tr><td>商品名</td><td>思い出きっぷ（アクリルキーホルダー）</td></tr>
+          <tr><td>ラインナップ</td><td>新大阪駅・京都駅・新神戸駅・奈良駅</td></tr>
+          <tr><td>価格</td><td>550円（税込）</td></tr>
+          <tr><td>発売日</td><td>2026年7月10日（金）</td></tr>
+          <tr><td>販売場所</td><td>駅鉄ポップショップ エキマルシェ新大阪店<br>（JR新大阪駅3F 在来線改札内）</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ストーリー -->
+  <section id="story">
+    <h2>💌 創業ストーリー</h2>
+    <p class="story-text">
+      幼いころから電車が好きでした。<br>
+      車窓から見える景色。初めて降り立つ駅。その街で出会う人や風景。<br>
+      電車は、ただの移動手段ではなく、新しい世界へ連れて行ってくれる特別な存在でした。<br><br>
+      しかし成長するにつれ、ある違和感を抱くようになります。<br>
+      女性が「バッグにつけたい」「毎日持ち歩きたい」と思える鉄道グッズは、まだ多くありません。<br><br>
+      SNSでは「#女子鉄」「#鉄子旅」の投稿が増え続けているのに、それに応えるブランドが足りない。<br><br>
+      その空白地帯を埋めたい。<br>
+      <strong>「かわいい」をきっかけに、電車を好きになる女の子を増やしたい。</strong><br><br>
+      その想いから、大阪公立大学在学中の門脇真歩が株式会社Cuterainを設立しました。
+    </p>
+  </section>
+
+  <!-- 会社概要 -->
+  <div class="company" id="company">
+    <div class="company-inner">
+      <h2>🏢 会社概要</h2>
+      <table>
+        <tr><td>社名</td><td>株式会社Cuterain</td></tr>
+        <tr><td>設立</td><td>2026年7月1日</td></tr>
+        <tr><td>代表取締役</td><td>門脇 真歩</td></tr>
+        <tr><td>事業内容</td><td>女性向け鉄道グッズ企画・販売<br>イベント企画・情報発信</td></tr>
+        <tr><td>HP</td><td><a href="https://cuterain.jp">https://cuterain.jp</a></td></tr>
+        <tr><td>E-mail</td><td>info@cuterain.jp</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- お問い合わせ -->
+  <section id="contact" class="contact">
+    <h2>📩 お問い合わせ</h2>
+    <p>ご質問・取材・コラボのご相談など、お気軽にご連絡ください。</p>
+    <p>✉️ <a href="mailto:info@cuterain.jp">info@cuterain.jp</a></p>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <p>🚃 © 2026 株式会社Cuterain All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
