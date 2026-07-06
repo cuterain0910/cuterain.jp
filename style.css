@@ -510,126 +510,169 @@ ul {
   margin-top: 4rem;
 }
 
-/* ============================================================
-   PRODUCTS
-   ============================================================ */
-.products {
-  padding: var(--spacing-xxl) 0;
-  background-color: var(--color-bg);
+/* =============================
+   PRODUCT セクション
+============================= */
+.product {
+  padding: 80px 40px;
+  background-color: #fff8f8;
+  text-align: center;
 }
 
-.products__inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 3rem;
+.product__header {
+  margin-bottom: 50px;
 }
 
-.products__label {
-  font-family: var(--font-serif-en);
-  font-size: 0.7rem;
-  letter-spacing: 0.5em;
-  color: var(--color-text-light);
-  margin-bottom: 5rem;
+.product__sub {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: #c9a0a0;
+  margin-bottom: 8px;
 }
 
-/* Main Product */
-.products__main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
-  margin-bottom: 6rem;
+.product__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #3a3a3a;
+  margin-bottom: 12px;
 }
 
-.products__main-image {
-  overflow: hidden;
-  border-radius: var(--radius-sm);
-}
-
-.products__main-img {
-  width: 100%;
-  object-fit: cover;
-  transition: transform 0.8s var(--transition-base);
-}
-
-.products__main-image:hover .products__main-img {
-  transform: scale(1.03);
-}
-
-.products__main-label {
-  font-family: var(--font-serif-en);
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  color: var(--color-text-light);
-  margin-bottom: 1rem;
-}
-
-.products__main-title {
-  font-family: var(--font-serif-jp);
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 200;
-  color: var(--color-brown-dark);
-  margin-bottom: 1.5rem;
-}
-
-.products__main-desc {
-  font-family: var(--font-serif-jp);
+.product__desc {
   font-size: 0.95rem;
-  line-height: 2.2;
-  color: var(--color-text-sub);
-  margin-bottom: 2.5rem;
+  color: #888;
+  letter-spacing: 0.1em;
 }
 
-/* Product Cards */
-.products__cards {
+/* グリッド */
+.product__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
 }
 
-.products__card {
-  cursor: pointer;
-  transition: transform 0.4s var(--transition-base),
-              box-shadow 0.4s var(--transition-base);
-  transition-delay: var(--delay, 0s);
-}
-
-.products__card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(139, 111, 94, 0.12);
-}
-
-.products__card-img-wrap {
+/* カード */
+.product__card {
+  background: #fff;
+  border-radius: 16px;
   overflow: hidden;
-  aspect-ratio: 3/4;
-  background: var(--color-bg-alt);
-  margin-bottom: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.products__card-img {
+.product__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* 画像エリア */
+.product__img-wrap {
+  position: relative;
+  overflow: hidden;
+  background: #fce8ec;
+  aspect-ratio: 3 / 4;
+}
+
+.product__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s var(--transition-base);
+  object-fit: contain;
+  padding: 20px;
+  transition: transform 0.4s ease;
 }
 
-.products__card:hover .products__card-img {
-  transform: scale(1.06);
+.product__card:hover .product__img {
+  transform: scale(1.05);
 }
 
-.products__card-label {
-  font-family: var(--font-serif-en);
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  color: var(--color-text-light);
-  margin-bottom: 0.3rem;
+/* ホバーオーバーレイ */
+.product__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(220, 130, 150, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.products__card-title {
-  font-family: var(--font-serif-jp);
+.product__card:hover .product__overlay {
+  opacity: 1;
+}
+
+.product__overlay span {
+  color: #fff;
   font-size: 1rem;
-  font-weight: 300;
-  color: var(--color-brown-dark);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  border: 2px solid #fff;
+  padding: 8px 20px;
+  border-radius: 30px;
+}
+
+/* テキスト情報 */
+.product__info {
+  padding: 16px;
+  text-align: left;
+}
+
+.product__en {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #c9a0a0;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.product__name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #3a3a3a;
+  margin: 0;
+}
+
+/* ボタン */
+.product__more {
+  margin-top: 20px;
+}
+
+.product__btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #e8a0b0, #d4708a);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(212, 112, 138, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product__btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(212, 112, 138, 0.5);
+}
+
+/* レスポンシブ */
+@media (max-width: 900px) {
+  .product__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .product__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product__title {
+    font-size: 1.8rem;
+  }
 }
 
 /* ============================================================
