@@ -577,6 +577,7 @@ ul {
   object-fit: contain;
   padding: 20px;
   transition: transform 0.4s ease;
+  filter: brightness(1.15) contrast(1.05);
 }
 
 .product__card:hover .product__img {
