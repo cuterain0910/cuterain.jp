@@ -472,57 +472,6 @@ ul {
   }
 }
 
-/* ============================================================
-   ABOUT
-   ============================================================ */
-.about {
-  padding: var(--spacing-xxl) 0;
-  background-color: var(--color-white);
-}
-
-.about__inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 3rem;
-  max-width: 800px;
-}
-
-.about__label {
-  font-family: var(--font-serif-en);
-  font-size: 0.7rem;
-  letter-spacing: 0.5em;
-  color: var(--color-text-light);
-  margin-bottom: 3rem;
-}
-
-.about__heading {
-  font-family: var(--font-serif-jp);
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 200;
-  line-height: 1.6;
-  letter-spacing: 0.05em;
-  color: var(--color-brown-dark);
-  margin-bottom: 3.5rem;
-}
-
-.about__body {
-  font-family: var(--font-serif-jp);
-  font-size: 1rem;
-  line-height: 2.2;
-  color: var(--color-text-sub);
-}
-
-.about__body p + p {
-  margin-top: 2rem;
-}
-
-.about__line {
-  width: 60px;
-  height: 1px;
-  background: var(--color-pink);
-  margin-top: 4rem;
-}
-
 /* =============================
    PRODUCT セクション
 ============================= */
@@ -1086,12 +1035,6 @@ ul {
   .hero__image-wrap {
     max-width: 320px;
     margin: 0 auto;
-  }
-
-  /* About */
-  .about__inner,
-  .news__inner {
-    padding: 0 1.5rem;
   }
 
   /* Products */
