@@ -38,21 +38,23 @@
     /* ============================================
        ヘッダー
     ============================================ */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 20px 40px;
-      transition: background-color 0.4s ease, box-shadow 0.4s ease;
-    }
+   .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 40px;
+  background-color: rgba(255, 255, 255, 0.92); /* ← 白背景に変更 */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 20px rgba(61, 43, 31, 0.06);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
 
-    .header.scrolled {
-      background-color: rgba(247, 221, 227, 0.95);
-      box-shadow: 0 2px 20px rgba(61, 43, 31, 0.08);
-      backdrop-filter: blur(8px);
-    }
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 2px 20px rgba(61, 43, 31, 0.12);
+}
 
     .header__inner {
       display: flex;
@@ -410,38 +412,36 @@
     display: none !important;
   }
 }
-    
   </style>
-</head>
+　</head>
+　<body>
 
-<body>
+ <!-- ========== HEADER ========== -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo">
+      <img src="logo.png" alt="Cuterain" class="header__logo-img" />
+      <!-- ↑ テキストは削除済み -->
+    </a>
 
-  <!-- ========== HEADER ========== -->
-  <header class="header" id="header">
-    <div class="header__inner">
-      <a href="index.html" class="header__logo">
-        <img src="logo.png" alt="Cuterain" class="header__logo-img" />
-        <span class="header__logo-text">Cuterain</span>
-      </a>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#story">Story</a></li>
+        <li><a href="index.html#news">News</a></li>
+        <li><a href="index.html#instagram">Instagram</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#products">Products</a></li>
-          <li><a href="index.html#story">Story</a></li>
-          <li><a href="index.html#news">News</a></li>
-          <li><a href="index.html#instagram">Instagram</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
+    <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
 
   <!-- モバイルメニュー -->
   <div class="mobile-menu" id="mobileMenu">
