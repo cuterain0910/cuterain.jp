@@ -230,7 +230,7 @@ ul {
 }
 
 .header__logo-img {
-  height: 6000px;
+  height: 500px;
   width: auto;
 }
 
@@ -582,9 +582,9 @@ ul {
   padding: 16px;
   text-align: left;
 }
-
 .product__en {
-  font-size: 0.7rem;
+  font-size: 0.7
+rem;
   letter-spacing: 0.2em;
   color: #c9a0a0;
   display: block;
