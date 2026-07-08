@@ -636,69 +636,6 @@ ul {
     font-size: 1.8rem;
   }
 }
-
-/* ============================================================
-   BRAND STORY
-   ============================================================ */
-.story {
-  padding: var(--spacing-xxl) 0;
-  background-color: var(--color-white);
-  overflow: hidden;
-}
-
-.story__inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 3rem;
-}
-
-.story__label {
-  font-family: var(--font-serif-en);
-  font-size: 0.7rem;
-  letter-spacing: 0.5em;
-  color: var(--color-text-light);
-  margin-bottom: 4rem;
-}
-
-.story__typo {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.5rem 1rem;
-  margin-bottom: 5rem;
-}
-
-.story__word {
-  font-family: var(--font-serif-jp);
-  font-size: clamp(3rem, 8vw, 8rem);
-  font-weight: 200;
-  line-height: 1.2;
-  color: var(--color-brown-dark);
-  letter-spacing: 0.02em;
-}
-
-.story__word--accent {
-  color: var(--color-pink);
-  font-style: italic;
-}
-
-.story__connector {
-  font-family: var(--font-serif-jp);
-  font-size: clamp(2rem, 5vw, 5rem);
-  font-weight: 200;
-  color: var(--color-text-sub);
-}
-
-.story__text {
-  max-width: 500px;
-  font-family: var(--font-serif-jp);
-  font-size: 1rem;
-  line-height: 2.4;
-  color: var(--color-text-sub);
-  border-left: 1px solid var(--color-pink);
-  padding-left: 2rem;
-}
-
 /* ============================================================
    NEWS
    ============================================================ */
@@ -1049,15 +986,6 @@ ul {
   .products__cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-  }
-
-  /* Story */
-  .story__inner {
-    padding: 0 1.5rem;
-  }
-
-  .story__word {
-    font-size: clamp(2.5rem, 12vw, 5rem);
   }
 
   /* News */
