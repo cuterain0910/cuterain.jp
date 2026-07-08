@@ -280,15 +280,36 @@
 
 <body>
 
-  <!-- ヘッダー -->
-  <header class="header">
-    <a href="index.html" class="header-logo">Cuterain</a>
-    <nav class="header-nav">
-      <a href="index.html">HOME</a>
-      <a href="index.html#about">ABOUT</a>
-      <a href="index.html#products">PRODUCTS</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+
+      <!-- ロゴ -->
+      <a href="index.html" class="header__logo">
+        <img src="logo.png" alt="Cuterain" class="header__logo-img" />
+        <span class="header__logo-text">Cuterain</span>
+      </a>
+
+      <!-- ナビゲーション -->
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#story">Story</a></li>
+          <li><a href="index.html#news">News</a></li>
+          <li><a href="index.html#instagram">Instagram</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- ハンバーガーボタン -->
+      <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
   </header>
 
   <!-- ページヒーロー -->
@@ -311,7 +332,6 @@
     </div>
 
     <!-- お問い合わせフォーム（Formspree） -->
-    <!-- ⚠️ YOUR_FORM_IDを後で変更してください -->
     <form
       class="contact-form"
       id="contactForm"
@@ -407,43 +427,22 @@
     <p class="footer-copy">© 2024 Cuterain. All rights reserved.</p>
   </footer>
 
+  <!-- ハンバーガーメニューJS -->
   <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('is-open');
+      menuBtn.classList.toggle('is-open');
+    });
+
     // 送信完了チェック（URLパラメータで判定）
     if (window.location.search.includes('sent=true')) {
       document.getElementById('contactForm').style.display = 'none';
       document.querySelector('.contact-lead').style.display = 'none';
     }
   </script>
-  <!-- ========== HEADER ========== -->
-<header class="header" id="header">
-  <div class="header__inner">
 
-    <!-- ロゴ -->
-    <a href="index.html" class="header__logo">
-      <img src="logo.png" alt="Cuterain" class="header__logo-img" />
-      <span class="header__logo-text">Cuterain</span>
-    </a>
-
-    <!-- ナビゲーション -->
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#products">Products</a></li>
-        <li><a href="index.html#story">Story</a></li>
-        <li><a href="index.html#news">News</a></li>
-        <li><a href="index.html#instagram">Instagram</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- ハンバーガーボタン -->
-    <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-  </div>
-</header>
 </body>
 </html>
