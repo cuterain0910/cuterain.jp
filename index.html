@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+JP:wght@200;300;400&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
+
+</body>
 <body>
 
  <!-- ========== HEADER ========== -->
@@ -253,5 +255,16 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- ↓ これを追加！ -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.querySelector('.nav-menu');
+
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('is-open');
+      menuBtn.classList.toggle('is-active');
+    });
+  </script>
 </body>
 </html>
