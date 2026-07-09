@@ -1532,3 +1532,11 @@ ul {
 .article__back-btn:hover {
   opacity: 0.6;
 }
+/* news-omoide.htmlの<style>タグ内に追加 */
+.article-image img {
+  width: 100%;
+  max-width: 400px; /* ← この数字を小さくすると画像が小さくなる */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
