@@ -1402,3 +1402,38 @@ ul {
   background: #c8a4a4;
   transform: translateY(-2px);
 }
+/* スマホ：ナビを非表示 */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+
+  /* is-openがついたら表示 */
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  .nav-menu ul li a {
+    font-size: 1.4rem;
+    color: #333;
+    text-decoration: none;
+  }
+}
