@@ -125,37 +125,32 @@
 </head>
 <body>
 
-  <!-- ヘッダー-->
   <!-- ========== HEADER ========== -->
-<header class="header" id="header">
-  <div class="header__inner">
+  <header class="header" id="header">
+    <div class="header__inner">
 
-    <!-- ロゴ -->
-    <a href="index.html" class="header__logo">
-      <img src="logo.png" alt="Cuterain" class="header__logo-img" />
-    </a>
+      <a href="index.html" class="header__logo">
+        <img src="logo.png" alt="Cuterain" class="header__logo-img" />
+      </a>
 
-    <!-- ナビゲーション -->
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="index.html#product">Product</a></li>
-        <li><a href="index.html#news">News</a></li>
-        <li><a href="media.html">Media</a></li>
-        <li><a href="index.html#instagram">Instagram</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-    </nav>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html#product">Product</a></li>
+          <li><a href="index.html#news">News</a></li>
+          <li><a href="media.html">Media</a></li>
+          <li><a href="index.html#instagram">Instagram</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-    <!-- ハンバーガーボタン -->
-    <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-  </div>
-</header>
-
+    </div>
+  </header>
 
   <main>
     <section class="media-section">
@@ -214,36 +209,55 @@
     </section>
   </main>
 
-  <!-- フッター-->
   <!-- ========== FOOTER ========== -->
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__top">
-      <div class="footer__logo">
-        <img src="logo.png" alt="Cuterain" class="footer__logo-img" />
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__logo">
+          <img src="logo.png" alt="Cuterain" class="footer__logo-img" />
+        </div>
+        <nav class="footer__nav">
+          <ul class="footer__nav-list">
+            <!-- ✅ index.html# に修正 -->
+            <li><a href="index.html#product">Product</a></li>
+            <li><a href="index.html#news">News</a></li>
+            <li><a href="index.html#instagram">Instagram</a></li>
+          </ul>
+        </nav>
+        <div class="footer__sns">
+          <a href="https://www.instagram.com/cuterain.0910/" target="_blank" rel="noopener" class="footer__sns-link" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
       </div>
-      <nav class="footer__nav">
-        <ul class="footer__nav-list">
-          <li><a href="#product">Product</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#instagram">Instagram</a></li>
-        </ul>
-      </nav>
-      <div class="footer__sns">
-        <a href="https://www.instagram.com/cuterain.0910/" target="_blank" rel="noopener" class="footer__sns-link" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-          </svg>
-        </a>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Cuterain. All rights reserved.</p>
       </div>
     </div>
-    <div class="footer__bottom">
-      <p class="footer__copy">&copy; 2026 Cuterain. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+  </footer>
+
+  <!-- ✅ ハンバーガーメニュー JS 追加 -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('is-open');
+      menuBtn.classList.toggle('is-open');
+    });
+
+    // メニュー外をクリックしたら閉じる
+    document.addEventListener('click', (e) => {
+      if (!menuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+        navMenu.classList.remove('is-open');
+        menuBtn.classList.remove('is-open');
+      }
+    });
+  </script>
 
 </body>
 </html>
