@@ -194,3 +194,13 @@ window.addEventListener('scroll', () => {
     word.style.transform = `translateX(${progress * speed * 300}px)`;
   });
 }, { passive: true });
+<script src="script.js"></script>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const nav = document.querySelector('.nav-menu');
+
+  menuBtn.addEventListener('click', () => {
+    nav.classList.toggle('is-open');
+    menuBtn.classList.toggle('is-active');
+  });
+</script>
