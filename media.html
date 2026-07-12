@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media | Cuterain</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .media-section {
+      max-width: 800px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .media-section h1 {
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: 0.2em;
+      margin-bottom: 60px;
+      color: #333;
+    }
+
+    .media-category {
+      margin-bottom: 60px;
+    }
+
+    .media-category h2 {
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      color: #888;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .media-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .media-item:last-child {
+      border-bottom: none;
+    }
+
+    .media-date {
+      font-size: 0.85rem;
+      color: #999;
+      white-space: nowrap;
+      min-width: 90px;
+      padding-top: 2px;
+    }
+
+    .media-info {
+      flex: 1;
+    }
+
+    .media-source {
+      font-size: 0.75rem;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .media-source.prtimes {
+      background-color: #e85298;
+    }
+
+    .media-source.nikkei {
+      background-color: #e63c2f;
+    }
+
+    .media-source.nikkin {
+      background-color: #009a7c;
+    }
+
+    .media-title {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .media-title a {
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #ddd;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .media-title a:hover {
+      color: #888;
+      border-bottom-color: #888;
+    }
+
+    .media-external-icon {
+      font-size: 0.75rem;
+      color: #bbb;
+      margin-left: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .media-item {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .media-date {
+        min-width: unset;
+      }
+
+      .media-section h1 {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー（index.htmlと同じものをここに貼る） -->
+
+  <main>
+    <section class="media-section">
+      <h1>Media</h1>
+
+      <!-- プレスリリース -->
+      <div class="media-category">
+        <h2>Press Release</h2>
+
+        <div class="media-item">
+          <span class="media-date">2026.07.10</span>
+          <div class="media-info">
+            <span class="media-source prtimes">PR TIMES</span>
+            <p class="media-title">
+              <a href="https://prtimes.jp/main/html/rd/p/000000003.000186696.html" target="_blank" rel="noopener noreferrer">
+                【現役女子大生が起業。「鉄道は男性向け」の常識に挑む"電車×かわいい"で新たな鉄道文化を創る】
+                <span class="media-external-icon">↗</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ニュース掲載 -->
+      <div class="media-category">
+        <h2>News Coverage</h2>
+
+        <div class="media-item">
+          <span class="media-date">2026.07.10</span>
+          <div class="media-info">
+            <span class="media-source nikkei">日本経済新聞</span>
+            <p class="media-title">
+              <a href="https://www.nikkei.com/article/DGXZQOUF1089Y0Q6A710C2000000/" target="_blank" rel="noopener noreferrer">
+                かわいい鉄道グッズ、学生が起業　三菱UFJ系が支援
+                <span class="media-external-icon">↗</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="media-item">
+          <span class="media-date">2026.07.10</span>
+          <div class="media-info">
+            <span class="media-source nikkin">ニッキン</span>
+            <p class="media-title">
+              <a href="https://www.nikkinonline.com/article/406579" target="_blank" rel="noopener noreferrer">
+                MUIC、学生起業支援プログラム　女子大生が鉄道グッズ販売
+                <span class="media-external-icon">↗</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター（index.htmlと同じものをここに貼る） -->
+
+</body>
+</html>
