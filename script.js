@@ -102,37 +102,17 @@ function initMobileMenu() {
   const nav = document.getElementById('headerNav');
   if (!menuBtn || !nav) return;
 
-  // オーバーレイ作成
-  const overlay = document.createElement('div');
-  overlay.style.cssText = `
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.3);
-    z-index: 999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-  `;
-  document.body.appendChild(overlay);
-
-  const openMenu = () => {
-    menuBtn.classList.add('is-open');
+  function openMenu() {
     nav.classList.add('is-open');
-    overlay.style.opacity = '1';
-    overlay.style.pointerEvents = 'auto';
-    document.body.style.overflow = 'hidden';
-    menuBtn.setAttribute('aria-label', 'メニューを閉じる');
-  };
+    menuBtn.classList.add('is-active');
+  }
 
-  const closeMenu = () => {
-    menuBtn.classList.remove('is-open');
+  function closeMenu() {
     nav.classList.remove('is-open');
-    overlay.style.opacity = '0';
-    overlay.style.pointerEvents = 'none';
-    document.body.style.overflow = '';
-    menuBtn.setAttribute('aria-label', 'メニューを開く');
-  };
+    menuBtn.classList.remove('is-active');
+  }
 
+  // ハンバーガーボタンのトグル
   menuBtn.addEventListener('click', () => {
     if (nav.classList.contains('is-open')) {
       closeMenu();
@@ -141,14 +121,22 @@ function initMobileMenu() {
     }
   });
 
-  overlay.addEventListener('click', closeMenu);
+  // ✅ ナビの全リンクをクリックしたら閉じる
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
 
-  // ナビリンククリックで閉じる
-  nav.querySelectorAll('.header__nav-link').forEach((link) => {
-    link.addEventListener('click', closeMenu);
+  // ✅ メニュー外をタップしたら閉じる
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
+      closeMenu();
+    }
   });
 }
 
+document.addEventListener('DOMContentLoaded', initMobileMenu);
 /* ============================================================
    SMOOTH SCROLL - アンカーリンク
    ============================================================ */
