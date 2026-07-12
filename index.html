@@ -21,15 +21,16 @@
         <img src="logo.png" alt="Cuterain" class="header__logo-img" />
       </a>
 
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="#product">Product</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="media.html">Media</a></li>
-          <li><a href="#instagram">Instagram</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <!-- ✅ 修正後：header__nav-link クラスを追加 -->
+<nav class="nav-menu" id="headerNav">
+  <ul>
+    <li><a href="#product" class="header__nav-link">Product</a></li>
+    <li><a href="#news" class="header__nav-link">News</a></li>
+    <li><a href="media.html" class="header__nav-link">Media</a></li>
+    <li><a href="#instagram" class="header__nav-link">Instagram</a></li>
+    <li><a href="#contact" class="header__nav-link">Contact</a></li>
+  </ul>
+</nav>
 
       <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く">
         <span></span>
@@ -254,16 +255,6 @@
   </footer>
 
   <script src="script.js"></script>
-
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const nav = document.querySelector('.nav-menu');
-
-    menuBtn.addEventListener('click', () => {
-      nav.classList.toggle('is-open');
-      menuBtn.classList.toggle('is-active');
-    });
-  </script>
 
 </body>
 </html>
