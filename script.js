@@ -136,7 +136,6 @@ function initMobileMenu() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', initMobileMenu);
 /* ============================================================
    SMOOTH SCROLL - アンカーリンク
    ============================================================ */
