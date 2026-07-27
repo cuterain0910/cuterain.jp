@@ -243,12 +243,12 @@ ul {
 }
 
 /* ナビゲーション */
-.nav-menu {
+.header__nav {
   display: flex;
   align-items: center;
 }
 
-.nav-menu ul {
+.header__nav ul {
   display: flex;
   flex-direction: row;             /* ← 横並び */
   align-items: center;
@@ -258,7 +258,7 @@ ul {
   padding: 0;
 }
 
-.nav-menu ul li a {
+.header__nav ul li a {
   font-family: var(--font-sans);
   font-size: 0.78rem;
   letter-spacing: 0.2em;
@@ -268,7 +268,7 @@ ul {
   white-space: nowrap;
 }
 
-.nav-menu ul li a:hover {
+.header__nav ul li a:hover {
   color: #c4788a;
 }
 
@@ -302,7 +302,7 @@ ul {
     flex-direction: row;           /* ← スマホも横並びを維持 */
   }
 
-  .nav-menu {
+  .header__nav {
     display: none;
     position: fixed;
     top: 0;
@@ -316,17 +316,17 @@ ul {
     align-items: center;
   }
 
-  .nav-menu.is-open {
+  .header__nav.is-open {
     display: flex;
   }
 
-  .nav-menu ul {
+  .header__nav ul {
     flex-direction: column;        /* スマホメニューは縦 */
     gap: 32px;
     text-align: center;
   }
 
-  .nav-menu ul li a {
+  .header__nav ul li a {
     font-size: 1.1rem;
     letter-spacing: 0.3em;
   }
