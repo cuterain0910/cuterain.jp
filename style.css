@@ -907,51 +907,6 @@ ul {
   }
 }
 
-/* ============================================================
-   RESPONSIVE - Mobile
-   ============================================================ */
-@media (max-width: 768px) {
-  :root {
-    --spacing-xl: 5rem;
-    --spacing-xxl: 7rem;
-  }
-
-  /* Header */
-  .header__inner {
-    padding: 0 1.5rem;
-  }
-
-  .header__nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 320px;
-    height: 100vh;
-    background: var(--color-white);
-    padding: 6rem 2.5rem;
-    transition: right 0.4s var(--transition-base);
-    box-shadow: -4px 0 30px rgba(0,0,0,0.08);
-  }
-
-  .header__nav.is-open {
-    right: 0;
-  }
-
-  .header__nav-list {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .header__nav-link {
-    font-size: 1.1rem;
-  }
-
-  .header__menu-btn {
-    display: flex;
-    z-index: 1001;
-  }
-
   /* Hero */
   .hero__inner {
     grid-template-columns: 1fr;
