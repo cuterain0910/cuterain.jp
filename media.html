@@ -241,23 +241,23 @@
   </footer>
 
   <!-- ✅ ハンバーガーメニュー JS 追加 -->
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const navMenu = document.querySelector('.nav-menu');
+ <script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navMenu = document.querySelector('.header__nav'); // ← ここを修正！
 
-    menuBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('is-open');
-      menuBtn.classList.toggle('is-open');
-    });
+  menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('is-open');
+    menuBtn.classList.toggle('is-open');
+  });
 
-    // メニュー外をクリックしたら閉じる
-    document.addEventListener('click', (e) => {
-      if (!menuBtn.contains(e.target) && !navMenu.contains(e.target)) {
-        navMenu.classList.remove('is-open');
-        menuBtn.classList.remove('is-open');
-      }
-    });
-  </script>
+  // メニュー外をクリックしたら閉じる
+  document.addEventListener('click', (e) => {
+    if (!menuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.remove('is-open');
+      menuBtn.classList.remove('is-open');
+    }
+  });
+</script>
 
 </body>
 </html>
